@@ -37,6 +37,7 @@ docker run -d --restart=always --name=serverstatus -v {$path}/config.json:/Serve
 
 eg:
 docker run -d --restart=always --name=serverstatus -v ~/config.json:/ServerStatus/server/config.json -p 80:80 -p 35601:35601 cppla/serverstatus
+sudo docker run -d --restart=always --name=serverstatus -v /home/ubuntu/sign/ServerStatus/config.json:/ServerStatus/server/config.json -p 62014:80 -p 62015:35601 cppla/serverstatus
 ```
 
 【客户端】：
@@ -45,6 +46,9 @@ wget --no-check-certificate -qO client-linux.py 'https://raw.githubusercontent.c
 
 eg:
 wget --no-check-certificate -qO client-linux.py 'https://raw.githubusercontent.com/cppla/ServerStatus/master/clients/client-linux.py' && nohup python client-linux.py SERVER=45.79.67.132 USER=s04  >/dev/null 2>&1 &
+wget --no-check-certificate -qO client-linux.py 'https://raw.githubusercontent.com/cppla/ServerStatus/master/clients/client-linux.py' && nohup python client-linux.py SERVER={$SERVER} USER={$USER} PASSWORD={$PASSWORD} >/dev/null 2>&1 &
+wget --no-check-certificate -qO client-linux.py 'https://raw.githubusercontent.com/cppla/ServerStatus/master/clients/client-linux.py' && nohup python client-linux.py SERVER={$SERVER} USER={$USER} PASSWORD={$PASSWORD} >/dev/null 2>&1 &
+
 ```
 
 # 手动安装教程：     
